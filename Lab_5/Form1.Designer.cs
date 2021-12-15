@@ -30,19 +30,19 @@ namespace Lab_5
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.AddBlockBtn = new System.Windows.Forms.Button();
-            this.DeleteBlockBtn = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EditFieldBtn = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.DeleteFieldBtn = new System.Windows.Forms.Button();
             this.AddFieldBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.EditFieldBtn = new System.Windows.Forms.Button();
+            this.DeleteBlockBtn = new System.Windows.Forms.Button();
+            this.AddBlockBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.OpenFileBtn = new System.Windows.Forms.Button();
-            this.SaveFileBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.filePathTextBox = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,62 +65,33 @@ namespace Lab_5
             this.MainPanel.Size = new System.Drawing.Size(374, 404);
             this.MainPanel.TabIndex = 0;
             // 
-            // listBox1
+            // textBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(179, 355);
-            this.listBox1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(189, 352);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 20);
+            this.textBox1.TabIndex = 10;
             // 
-            // label1
+            // EditFieldBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(3, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Блоки";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.EditFieldBtn.Location = new System.Drawing.Point(280, 326);
+            this.EditFieldBtn.Name = "EditFieldBtn";
+            this.EditFieldBtn.Size = new System.Drawing.Size(87, 23);
+            this.EditFieldBtn.TabIndex = 9;
+            this.EditFieldBtn.Text = "Изменить";
+            this.EditFieldBtn.UseVisualStyleBackColor = true;
+            this.EditFieldBtn.Click += new System.EventHandler(this.EditFieldBtn_Click);
             // 
-            // listBox2
+            // label3
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(188, 20);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(179, 303);
-            this.listBox2.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(188, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Поля";
-            // 
-            // AddBlockBtn
-            // 
-            this.AddBlockBtn.Location = new System.Drawing.Point(3, 378);
-            this.AddBlockBtn.Name = "AddBlockBtn";
-            this.AddBlockBtn.Size = new System.Drawing.Size(87, 23);
-            this.AddBlockBtn.TabIndex = 4;
-            this.AddBlockBtn.Text = "Добавить";
-            this.AddBlockBtn.UseVisualStyleBackColor = true;
-            this.AddBlockBtn.Click += new System.EventHandler(this.AddBlockBtn_Click);
-            // 
-            // DeleteBlockBtn
-            // 
-            this.DeleteBlockBtn.Location = new System.Drawing.Point(95, 378);
-            this.DeleteBlockBtn.Name = "DeleteBlockBtn";
-            this.DeleteBlockBtn.Size = new System.Drawing.Size(87, 23);
-            this.DeleteBlockBtn.TabIndex = 5;
-            this.DeleteBlockBtn.Text = "Удалить";
-            this.DeleteBlockBtn.UseVisualStyleBackColor = true;
-            this.DeleteBlockBtn.Click += new System.EventHandler(this.DeleteBlockBtn_Click);
+            this.label3.AutoSize = true;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label3.Location = new System.Drawing.Point(188, 334);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Значениe";
             // 
             // DeleteFieldBtn
             // 
@@ -142,26 +113,62 @@ namespace Lab_5
             this.AddFieldBtn.UseVisualStyleBackColor = true;
             this.AddFieldBtn.Click += new System.EventHandler(this.AddFieldBtn_Click);
             // 
-            // label3
+            // DeleteBlockBtn
             // 
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Location = new System.Drawing.Point(188, 334);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 15);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Значениe";
+            this.DeleteBlockBtn.Location = new System.Drawing.Point(95, 378);
+            this.DeleteBlockBtn.Name = "DeleteBlockBtn";
+            this.DeleteBlockBtn.Size = new System.Drawing.Size(87, 23);
+            this.DeleteBlockBtn.TabIndex = 5;
+            this.DeleteBlockBtn.Text = "Удалить";
+            this.DeleteBlockBtn.UseVisualStyleBackColor = true;
+            this.DeleteBlockBtn.Click += new System.EventHandler(this.DeleteBlockBtn_Click);
             // 
-            // EditFieldBtn
+            // AddBlockBtn
             // 
-            this.EditFieldBtn.Location = new System.Drawing.Point(280, 326);
-            this.EditFieldBtn.Name = "EditFieldBtn";
-            this.EditFieldBtn.Size = new System.Drawing.Size(87, 23);
-            this.EditFieldBtn.TabIndex = 9;
-            this.EditFieldBtn.Text = "Изменить";
-            this.EditFieldBtn.UseVisualStyleBackColor = true;
-            this.EditFieldBtn.Click += new System.EventHandler(this.EditFieldBtn_Click);
+            this.AddBlockBtn.Location = new System.Drawing.Point(3, 378);
+            this.AddBlockBtn.Name = "AddBlockBtn";
+            this.AddBlockBtn.Size = new System.Drawing.Size(87, 23);
+            this.AddBlockBtn.TabIndex = 4;
+            this.AddBlockBtn.Text = "Добавить";
+            this.AddBlockBtn.UseVisualStyleBackColor = true;
+            this.AddBlockBtn.Click += new System.EventHandler(this.AddBlockBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(188, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Поля";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(188, 20);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(179, 303);
+            this.listBox2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(3, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Блоки";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(3, 20);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(179, 355);
+            this.listBox1.TabIndex = 0;
             // 
             // OpenFileBtn
             // 
@@ -173,30 +180,19 @@ namespace Lab_5
             this.OpenFileBtn.UseVisualStyleBackColor = true;
             this.OpenFileBtn.Click += new System.EventHandler(this.button6_Click);
             // 
-            // SaveFileBtn
+            // filePathTextBox
             // 
-            this.SaveFileBtn.Enabled = false;
-            this.SaveFileBtn.Location = new System.Drawing.Point(282, 5);
-            this.SaveFileBtn.Name = "SaveFileBtn";
-            this.SaveFileBtn.Size = new System.Drawing.Size(104, 23);
-            this.SaveFileBtn.TabIndex = 11;
-            this.SaveFileBtn.Text = "Сохранить файл";
-            this.SaveFileBtn.UseVisualStyleBackColor = true;
-            this.SaveFileBtn.Click += new System.EventHandler(this.SaveFileBtn_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(189, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 10;
+            this.filePathTextBox.Location = new System.Drawing.Point(116, 8);
+            this.filePathTextBox.Name = "filePathTextBox";
+            this.filePathTextBox.Size = new System.Drawing.Size(270, 20);
+            this.filePathTextBox.TabIndex = 11;
             // 
             // BlockEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 450);
-            this.Controls.Add(this.SaveFileBtn);
+            this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.OpenFileBtn);
             this.Controls.Add(this.MainPanel);
             this.Name = "BlockEditor";
@@ -204,6 +200,7 @@ namespace Lab_5
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -222,7 +219,7 @@ namespace Lab_5
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button OpenFileBtn;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button SaveFileBtn;
+        private System.Windows.Forms.TextBox filePathTextBox;
     }
 }
 
