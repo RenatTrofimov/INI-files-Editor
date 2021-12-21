@@ -1,15 +1,128 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
 namespace Lab_5
 {
-    
-    public class INIReader {
-        private Stream stream;
-        public INIReader(Stream aStream)
+
+    public class Node<T>
+    {
+        public Node(T data)
         {
-            stream = aStream;
+            Data = data;
+        }
+        public T Data { get; set; }
+        public Node<T> Next { get; set; }
+    }
+
+    class INIBlock
+    {
+        public INIBlock(string name)
+        {
+            this.name = name;
+            Property = new LinkedList<INIProperty>();
+        }
+
+        public String name { get; set; }
+        public LinkedList<INIProperty> Property { get; set; }
+    }
+    class INIProperty
+    {
+        public INIProperty()
+        {
+            this.name = "";
+            this.data = "";
+        }
+        public INIProperty(string name, string data)
+        {
+            this.name = name;
+            this.data = data;
+        }
+
+        public String name { get; set; }
+        public String data { get; set; }
+    }
+    public class LinkedList<T> : IEnumerable<T>  // односвязный список
+    {
+        Node<T> head;
+        Node<T> tail;
+        int count; 
+        public LinkedList()
+        {
+            head = tail = null;
+            count = 0;
+        }
+        public void Add(T data)
+        {
+            Node<T> node = new Node<T>(data);
+
+            if (head == null)
+                head = node;
+            else
+                tail.Next = node;
+            tail = node;
+
+            count++;
+        }
+        public bool Remove(T data)
+        {
+            Node<T> current = head;
+            Node<T> previous = null;
+
+            while (current != null)
+            {
+                if (current.Data.Equals(data))
+                {
+                    if (previous != null)
+                    {
+                        previous.Next = current.Next;
+                        if (current.Next == null)
+                            tail = previous;
+                    }
+                    else
+                    {
+                       
+                        head = head.Next;
+                        if (head == null)
+                            tail = null;
+                    }
+                    count--;
+                    return true;
+                }
+
+                previous = current;
+                current = current.Next;
+            }
+            return false;
+        }
+        public int Count { get { return count; } }
+        public bool IsEmpty { get { return count == 0; } }
+        public void Clear()
+        {
+            head = null;
+            tail = null;
+            count = 0;
+        }
+        public void Read()
+        {
+            
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)this).GetEnumerator();
+        }
+
+        IEnumerator<T> IEnumerable<T>.GetEnumerator()
+        {
+            Node<T> current = head;
+            while (current != null)
+            {
+                yield return current.Data;
+                current = current.Next;
+            }
         }
     }
     public partial class BlockEditor : Form
@@ -46,12 +159,19 @@ namespace Lab_5
                 {
                     
                     int countBlock = 0;
+                    
                     while (!reader.EndOfStream)
                     {
                         String str = reader.ReadLine();
+                        LinkedList<INIBlock> Blocks = new LinkedList<INIBlock>();
                         if (str.Contains("[\"")&& str.Contains("\"]"))
                         {
-                            countBlock++;
+                            Blocks.Add(new INIBlock("0"));
+                        }
+                        if (str.Contains("="))
+                        {
+                            string[] words = str.Split(new char[] { '=' });
+                        
                         }
                     }
                     filePathTextBox.Text = countBlock.ToString();
