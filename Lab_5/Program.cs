@@ -16,7 +16,7 @@ namespace Lab_5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BlockEditor());
+            Application.Run(new IniEditor());
         }
     }
 }

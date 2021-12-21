@@ -7,4 +7,6 @@ C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.csproj.GenerateResource.
 C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.csproj.CoreCompileInputs.cache
 C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.exe
 C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.pdb
-C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.BlockEditor.resources
+C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.IniEditor.resources
+C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.Block.resources
+C:\Users\Renas\source\repos\Lab_5\Lab_5\obj\Debug\Lab_5.Property.resources

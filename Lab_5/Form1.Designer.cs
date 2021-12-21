@@ -1,7 +1,7 @@
 ﻿
 namespace Lab_5
 {
-    partial class BlockEditor
+    partial class IniEditor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,8 @@ namespace Lab_5
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.SaveFileBtn = new System.Windows.Forms.Button();
+            this.valueTX = new System.Windows.Forms.TextBox();
             this.EditFieldBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.DeleteFieldBtn = new System.Windows.Forms.Button();
@@ -38,17 +39,20 @@ namespace Lab_5
             this.DeleteBlockBtn = new System.Windows.Forms.Button();
             this.AddBlockBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listOfProperty = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listOfBlocks = new System.Windows.Forms.ListBox();
             this.OpenFileBtn = new System.Windows.Forms.Button();
             this.filePathTextBox = new System.Windows.Forms.TextBox();
+            this.EditBlock = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainPanel
             // 
-            this.MainPanel.Controls.Add(this.textBox1);
+            this.MainPanel.Controls.Add(this.EditBlock);
+            this.MainPanel.Controls.Add(this.SaveFileBtn);
+            this.MainPanel.Controls.Add(this.valueTX);
             this.MainPanel.Controls.Add(this.EditFieldBtn);
             this.MainPanel.Controls.Add(this.label3);
             this.MainPanel.Controls.Add(this.DeleteFieldBtn);
@@ -56,21 +60,32 @@ namespace Lab_5
             this.MainPanel.Controls.Add(this.DeleteBlockBtn);
             this.MainPanel.Controls.Add(this.AddBlockBtn);
             this.MainPanel.Controls.Add(this.label2);
-            this.MainPanel.Controls.Add(this.listBox2);
+            this.MainPanel.Controls.Add(this.listOfProperty);
             this.MainPanel.Controls.Add(this.label1);
-            this.MainPanel.Controls.Add(this.listBox1);
+            this.MainPanel.Controls.Add(this.listOfBlocks);
             this.MainPanel.Enabled = false;
-            this.MainPanel.Location = new System.Drawing.Point(12, 34);
+            this.MainPanel.Location = new System.Drawing.Point(12, 50);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(374, 404);
+            this.MainPanel.Size = new System.Drawing.Size(374, 447);
             this.MainPanel.TabIndex = 0;
             // 
-            // textBox1
+            // SaveFileBtn
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 352);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 10;
+            this.SaveFileBtn.Location = new System.Drawing.Point(189, 413);
+            this.SaveFileBtn.Name = "SaveFileBtn";
+            this.SaveFileBtn.Size = new System.Drawing.Size(176, 23);
+            this.SaveFileBtn.TabIndex = 12;
+            this.SaveFileBtn.Text = "Сохранить файл";
+            this.SaveFileBtn.UseVisualStyleBackColor = true;
+            this.SaveFileBtn.Click += new System.EventHandler(this.SaveFileBtn_Click_1);
+            // 
+            // valueTX
+            // 
+            this.valueTX.Location = new System.Drawing.Point(189, 352);
+            this.valueTX.Name = "valueTX";
+            this.valueTX.Size = new System.Drawing.Size(178, 20);
+            this.valueTX.TabIndex = 10;
+            this.valueTX.TextChanged += new System.EventHandler(this.valueTX_TextChanged);
             // 
             // EditFieldBtn
             // 
@@ -143,13 +158,14 @@ namespace Lab_5
             this.label2.TabIndex = 3;
             this.label2.Text = "Поля";
             // 
-            // listBox2
+            // listOfProperty
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(188, 20);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(179, 303);
-            this.listBox2.TabIndex = 2;
+            this.listOfProperty.FormattingEnabled = true;
+            this.listOfProperty.Location = new System.Drawing.Point(188, 20);
+            this.listOfProperty.Name = "listOfProperty";
+            this.listOfProperty.Size = new System.Drawing.Size(179, 303);
+            this.listOfProperty.TabIndex = 2;
+            this.listOfProperty.SelectedIndexChanged += new System.EventHandler(this.listOfProperty_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -162,17 +178,18 @@ namespace Lab_5
             this.label1.Text = "Блоки";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // listBox1
+            // listOfBlocks
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 20);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(179, 355);
-            this.listBox1.TabIndex = 0;
+            this.listOfBlocks.FormattingEnabled = true;
+            this.listOfBlocks.Location = new System.Drawing.Point(3, 20);
+            this.listOfBlocks.Name = "listOfBlocks";
+            this.listOfBlocks.Size = new System.Drawing.Size(179, 355);
+            this.listOfBlocks.TabIndex = 0;
+            this.listOfBlocks.SelectedIndexChanged += new System.EventHandler(this.listOfBlocks_SelectedIndexChanged);
             // 
             // OpenFileBtn
             // 
-            this.OpenFileBtn.Location = new System.Drawing.Point(12, 5);
+            this.OpenFileBtn.Location = new System.Drawing.Point(15, 21);
             this.OpenFileBtn.Name = "OpenFileBtn";
             this.OpenFileBtn.Size = new System.Drawing.Size(98, 23);
             this.OpenFileBtn.TabIndex = 10;
@@ -182,20 +199,30 @@ namespace Lab_5
             // 
             // filePathTextBox
             // 
-            this.filePathTextBox.Location = new System.Drawing.Point(116, 8);
+            this.filePathTextBox.Location = new System.Drawing.Point(119, 23);
             this.filePathTextBox.Name = "filePathTextBox";
-            this.filePathTextBox.Size = new System.Drawing.Size(270, 20);
+            this.filePathTextBox.Size = new System.Drawing.Size(258, 20);
             this.filePathTextBox.TabIndex = 11;
             // 
-            // BlockEditor
+            // EditBlock
+            // 
+            this.EditBlock.Location = new System.Drawing.Point(3, 407);
+            this.EditBlock.Name = "EditBlock";
+            this.EditBlock.Size = new System.Drawing.Size(87, 23);
+            this.EditBlock.TabIndex = 13;
+            this.EditBlock.Text = "Изменить";
+            this.EditBlock.UseVisualStyleBackColor = true;
+            this.EditBlock.Click += new System.EventHandler(this.EditBlock_Click);
+            // 
+            // IniEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 450);
+            this.ClientSize = new System.Drawing.Size(389, 498);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.OpenFileBtn);
             this.Controls.Add(this.MainPanel);
-            this.Name = "BlockEditor";
+            this.Name = "IniEditor";
             this.Text = "Form1";
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();
@@ -208,7 +235,7 @@ namespace Lab_5
 
         private System.Windows.Forms.Panel MainPanel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listOfBlocks;
         private System.Windows.Forms.Button EditFieldBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button DeleteFieldBtn;
@@ -216,10 +243,12 @@ namespace Lab_5
         private System.Windows.Forms.Button DeleteBlockBtn;
         private System.Windows.Forms.Button AddBlockBtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listOfProperty;
         private System.Windows.Forms.Button OpenFileBtn;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox valueTX;
         private System.Windows.Forms.TextBox filePathTextBox;
+        private System.Windows.Forms.Button SaveFileBtn;
+        private System.Windows.Forms.Button EditBlock;
     }
 }
 
