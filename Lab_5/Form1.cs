@@ -10,13 +10,11 @@ namespace Lab_5
     {
         INIBlock selectedBlock;
         string filePath;
-        bool isfile;
         INIManager INIManager;
         public IniEditor()
         {
             InitializeComponent();
             filePath = string.Empty;
-            isfile = false;
             INIManager = new INIManager();
             selectedBlock = null;
         }
@@ -42,8 +40,6 @@ namespace Lab_5
 
                 INIManager.ReadFile(filePath);
 
-                isfile = true;
-                
                 MainPanel.Enabled = true;
             }
             setBlockList();
@@ -188,6 +184,26 @@ namespace Lab_5
                     }
                 }
             }
+        }
+
+        private void CreateFileBtn_Click(object sender, EventArgs e)
+        {
+            MainPanel.Enabled = true;
+            clearAll();
+
+
+        }
+        void clearAll()
+        {
+            listOfBlocks.Items.Clear();
+            listOfProperty.Items.Clear();
+            valueTX.Text = "";
+            INIManager.Blocks.Clear();
+        }
+        private void CloseFileBtn_Click(object sender, EventArgs e)
+        {
+            MainPanel.Enabled = false;
+            clearAll();
         }
     }
     public class Node<T>

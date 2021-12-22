@@ -45,6 +45,8 @@ namespace Lab_5
             this.listOfBlocks = new System.Windows.Forms.ListBox();
             this.OpenFileBtn = new System.Windows.Forms.Button();
             this.filePathTextBox = new System.Windows.Forms.TextBox();
+            this.CreateFileBtn = new System.Windows.Forms.Button();
+            this.CloseFileBtn = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@ namespace Lab_5
             this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Controls.Add(this.listOfBlocks);
             this.MainPanel.Enabled = false;
-            this.MainPanel.Location = new System.Drawing.Point(12, 50);
+            this.MainPanel.Location = new System.Drawing.Point(12, 79);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(374, 436);
             this.MainPanel.TabIndex = 0;
@@ -93,6 +95,7 @@ namespace Lab_5
             // 
             this.valueTX.Location = new System.Drawing.Point(189, 352);
             this.valueTX.Name = "valueTX";
+            this.valueTX.ReadOnly = true;
             this.valueTX.Size = new System.Drawing.Size(178, 20);
             this.valueTX.TabIndex = 10;
             this.valueTX.TextChanged += new System.EventHandler(this.valueTX_TextChanged);
@@ -209,16 +212,39 @@ namespace Lab_5
             // 
             // filePathTextBox
             // 
-            this.filePathTextBox.Location = new System.Drawing.Point(119, 23);
+            this.filePathTextBox.Location = new System.Drawing.Point(15, 50);
             this.filePathTextBox.Name = "filePathTextBox";
-            this.filePathTextBox.Size = new System.Drawing.Size(258, 20);
+            this.filePathTextBox.ReadOnly = true;
+            this.filePathTextBox.Size = new System.Drawing.Size(362, 20);
             this.filePathTextBox.TabIndex = 11;
+            // 
+            // CreateFileBtn
+            // 
+            this.CreateFileBtn.Location = new System.Drawing.Point(119, 21);
+            this.CreateFileBtn.Name = "CreateFileBtn";
+            this.CreateFileBtn.Size = new System.Drawing.Size(98, 23);
+            this.CreateFileBtn.TabIndex = 12;
+            this.CreateFileBtn.Text = "Создать файл";
+            this.CreateFileBtn.UseVisualStyleBackColor = true;
+            this.CreateFileBtn.Click += new System.EventHandler(this.CreateFileBtn_Click);
+            // 
+            // CloseFileBtn
+            // 
+            this.CloseFileBtn.Location = new System.Drawing.Point(280, 21);
+            this.CloseFileBtn.Name = "CloseFileBtn";
+            this.CloseFileBtn.Size = new System.Drawing.Size(98, 23);
+            this.CloseFileBtn.TabIndex = 13;
+            this.CloseFileBtn.Text = "Закрыть файл";
+            this.CloseFileBtn.UseVisualStyleBackColor = true;
+            this.CloseFileBtn.Click += new System.EventHandler(this.CloseFileBtn_Click);
             // 
             // IniEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 486);
+            this.ClientSize = new System.Drawing.Size(389, 518);
+            this.Controls.Add(this.CloseFileBtn);
+            this.Controls.Add(this.CreateFileBtn);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.OpenFileBtn);
             this.Controls.Add(this.MainPanel);
@@ -249,6 +275,8 @@ namespace Lab_5
         private System.Windows.Forms.TextBox filePathTextBox;
         private System.Windows.Forms.Button SaveFileBtn;
         private System.Windows.Forms.Button EditBlock;
+        private System.Windows.Forms.Button CreateFileBtn;
+        private System.Windows.Forms.Button CloseFileBtn;
     }
 }
 
