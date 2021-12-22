@@ -212,7 +212,7 @@ namespace Lab_5
 
                 if (str.Contains("[") && str.Contains("]"))
                 {
-                    Blocks.Add(new INIBlock(str));
+                    Blocks.Add(new INIBlock(str.Trim('[',']')));
                 }
                 if (str.Contains("="))
                 {
@@ -227,7 +227,7 @@ namespace Lab_5
             StreamWriter writer = new StreamWriter(filePath);
             foreach (var block in Blocks)
             {
-                writer.WriteLine(block.name);
+                writer.WriteLine('['+block.name+']');
                 foreach (var property in block.Property)
                 {
                     writer.WriteLine(property.name + "=" + property.data);

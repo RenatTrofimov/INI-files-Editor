@@ -30,6 +30,7 @@ namespace Lab_5
         private void InitializeComponent()
         {
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.EditBlock = new System.Windows.Forms.Button();
             this.SaveFileBtn = new System.Windows.Forms.Button();
             this.valueTX = new System.Windows.Forms.TextBox();
             this.EditFieldBtn = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@ namespace Lab_5
             this.listOfBlocks = new System.Windows.Forms.ListBox();
             this.OpenFileBtn = new System.Windows.Forms.Button();
             this.filePathTextBox = new System.Windows.Forms.TextBox();
-            this.EditBlock = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,12 +66,22 @@ namespace Lab_5
             this.MainPanel.Enabled = false;
             this.MainPanel.Location = new System.Drawing.Point(12, 50);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(374, 447);
+            this.MainPanel.Size = new System.Drawing.Size(374, 436);
             this.MainPanel.TabIndex = 0;
+            // 
+            // EditBlock
+            // 
+            this.EditBlock.Location = new System.Drawing.Point(3, 407);
+            this.EditBlock.Name = "EditBlock";
+            this.EditBlock.Size = new System.Drawing.Size(87, 23);
+            this.EditBlock.TabIndex = 13;
+            this.EditBlock.Text = "Изменить";
+            this.EditBlock.UseVisualStyleBackColor = true;
+            this.EditBlock.Click += new System.EventHandler(this.EditBlock_Click);
             // 
             // SaveFileBtn
             // 
-            this.SaveFileBtn.Location = new System.Drawing.Point(189, 413);
+            this.SaveFileBtn.Location = new System.Drawing.Point(190, 408);
             this.SaveFileBtn.Name = "SaveFileBtn";
             this.SaveFileBtn.Size = new System.Drawing.Size(176, 23);
             this.SaveFileBtn.TabIndex = 12;
@@ -204,21 +214,11 @@ namespace Lab_5
             this.filePathTextBox.Size = new System.Drawing.Size(258, 20);
             this.filePathTextBox.TabIndex = 11;
             // 
-            // EditBlock
-            // 
-            this.EditBlock.Location = new System.Drawing.Point(3, 407);
-            this.EditBlock.Name = "EditBlock";
-            this.EditBlock.Size = new System.Drawing.Size(87, 23);
-            this.EditBlock.TabIndex = 13;
-            this.EditBlock.Text = "Изменить";
-            this.EditBlock.UseVisualStyleBackColor = true;
-            this.EditBlock.Click += new System.EventHandler(this.EditBlock_Click);
-            // 
             // IniEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 498);
+            this.ClientSize = new System.Drawing.Size(389, 486);
             this.Controls.Add(this.filePathTextBox);
             this.Controls.Add(this.OpenFileBtn);
             this.Controls.Add(this.MainPanel);
